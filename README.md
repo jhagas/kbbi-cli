@@ -23,7 +23,7 @@ sudo chmod +x /usr/local/bin/kbbi
 ### Android
 Saya sangat sarankan untuk menggunakan [Termux](https://play.google.com/store/apps/details?id=com.termux&hl=en&gl=US) saat menjalankan script ini.
 ```bash
-pkg install w3m -yq
+pkg install w3m -y
 curl -sL https://github.com/jhagas/kbbi-cli/raw/main/kbbi -o /data/data/com.termux/files/usr/bin/kbbi
 chmod +x /data/data/com.termux/files/usr/bin/kbbi
 ```
