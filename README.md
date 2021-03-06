@@ -1,4 +1,5 @@
-# Kamus Besar Bahasa Indonesia (KBBI) _CLI-Script_
+<h1 align=center>Kamus Besar Bahasa Indonesia (KBBI) <i>CLI-Script</i></h1>
+
 Cari makna kata dari KBBI? Cari aja disini. Cukup dengan mengetikkan kata yang ingin anda cari, ENTER dan langsung keluar hasilnya. Namun perlu diperhatikan bahwa **KONEKSI INTERNET DIBUTUHKAN**!!
 
 <div align=center>
@@ -7,7 +8,7 @@ Cari makna kata dari KBBI? Cari aja disini. Cukup dengan mengetikkan kata yang i
 </div>
 
 ----
-# <center>Pemasangan
+<h1 align=center>Pemasangan</h1>
 
 ## _Dependency_, Persyaratan
 _Script_ ini menggunakan `w3m` agar bisa berjalan dengan baik. Pastikan `w3m` telah terinstall di sistem **linux** anda
@@ -18,11 +19,21 @@ Untuk pemasangan, cukup salin perintah ini di **terminal linux** anda dan tekan 
 sudo curl -sL https://github.com/jhagas/kbbi-cli/raw/main/kbbi -o /usr/local/bin/kbbi
 sudo chmod +x /usr/local/bin/kbbi
 ```
+
+### Android
+Saya sangat sarankan untuk menggunakan [Termux](https://play.google.com/store/apps/details?id=com.termux&hl=en&gl=US) saat menjalankan script ini.
+```bash
+pkg install w3m -yq
+curl -sL https://github.com/jhagas/kbbi-cli/raw/main/kbbi -o /data/data/com.termux/files/usr/bin/kbbi
+chmod +x /data/data/com.termux/files/usr/bin/kbbi
+```
+
+
 ### Windows
 Script ini tidak berjalan di Windows secara _native_, namun anda bisa menggunakan fitur [WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10) (Windows Subsystem for Linux) pada Windows 10. Lalu jalankan proses pemasangan seperti halnya untuk Linux.
 
 ----
-## <center>CARA PENGGUNAAN
+<h2 align=center>CARA PENGGUNAAN</h1>
 Buka **terminal linux** anda dan ketikkan..
 `kbbi [opsi] [kata yang ingin dicari]`
 
@@ -32,7 +43,8 @@ Buka **terminal linux** anda dan ketikkan..
 |-h or --help|Untuk Menampilkan tulisan bantuan|
 
 ---
-#<center> _DISCLAIMER_
+<h1 align=center><i>DISCLAIMER</i></h1>
+
 Semua hasil pencarian script ini diambil dari situs https://kbbi.kemdikbud.go.id.
 >Batas pencarian harian ditentukan oleh situs tersebut, Bukan kehendak saya untuk membatasi anda.
 Silahkan gunakan proxy atau VPN..

@@ -25,6 +25,10 @@ check_deps() {
     done
 }
 
+error_msg() {
+    printf "%b%s%b\n"  "$R" "$*" "$N"
+}
+
 
 # Dependency check
 check_deps "w3m"
