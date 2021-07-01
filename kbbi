@@ -69,9 +69,11 @@ query=$(echo "$*" | sed 's/ /%20/g')
 
 # Download HTML Information and dump it in terminal
 url="https://kbbi.kemdikbud.go.id/entri/$query"
-html=$(curl -Gs "$url" | sed -n '90p' | sed 's/&#x21E2; Tesaurus//g;s/Etimologi://g;s/\[//;s/\Informasi etimologi hanya tersedia bagi pengguna terdaftar//g;s/\]//')
+html=$(curl -Gs "$url" | sed -n '90p' | sed 's/<hr //g;s/&#x21E2; Tesaurus//g;s/Etimologi://g;s/\[//;s/\Informasi etimologi hanya tersedia bagi pengguna terdaftar//g;s/\]//;s/style="margin-top:0.35em;margin-bottom:0.35em" \/>//g')
 
 # Exit if Daily Search Limit is exceeded
 [ -z "$html" ] && echo "${R}Anda telah melebihi batas pencarian harian!!${N}" && exit
 
-echo "${html%<hr />*}" | w3m -dump -cols 75 -T text/html | awk -v RS='\n\n' 1
+echo
+echo "${M}HASIL PENCARIAN:${N}"
+echo "${html%/>*}" | w3m -dump -cols 75 -T text/html | awk -v RS='\n\n' 1
