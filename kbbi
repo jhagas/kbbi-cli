@@ -41,6 +41,9 @@ Y="\033[1;33m" # Yellow
 M="\033[1;35m" # Magenta
 C="\033[1;36m" # Cyan
 
+# Terminal Column
+cols=$(tput cols)
+
 
 ##### Getopts #####
 case "$1" in
@@ -76,4 +79,4 @@ html=$(curl -Gs "$url" | sed -n '90p' | sed 's/<hr //g;s/&#x21E2; Tesaurus//g;s/
 
 echo
 echo "${M}HASIL PENCARIAN:${N}"
-echo "${html%/>*}" | w3m -dump -cols 75 -T text/html | awk -v RS='\n\n' 1
+echo "${html%/>*}" | w3m -dump -cols "$cols" -T text/html | sed '/^ $/d' | awk -v RS='\n\n\n' 1
