@@ -32,6 +32,7 @@ error_msg() {
 
 # Dependency check
 check_deps "w3m"
+check_deps "ncurses-utils"
 
 # color codes
 N="\033[0m"    # Reset
